@@ -1,4 +1,5 @@
 /* jshint node: true */
+/* hello */
 
 module.exports = function(grunt) {
   "use strict";
