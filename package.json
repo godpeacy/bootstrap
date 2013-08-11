@@ -1,11 +1,12 @@
 {
-    "name": "bootstrap"
+    "name": "bootstrap-google-style base v3.0.0"
+  , "private": true
   , "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development."
   , "version": "3.0.0"
   , "keywords": ["bootstrap", "css"]
   , "homepage": "http://twbs.github.com/bootstrap/"
   , "author": "Twitter Inc."
-  , "scripts": { "test": "grunt test" }
+  , "scripts": { "test": "grunt test", "start": "node app.js" }
   , "repository": {
       "type": "git"
     , "url": "https://github.com/twbs/bootstrap.git"
@@ -27,5 +28,9 @@
     , "grunt-contrib-watch": "~0.5.1"
     , "grunt-recess": "~0.3.3"
     , "browserstack-runner": "~0.0.11"
+  }
+  , "dependencies": {
+      "express": "3.3.4"
+    , "ejs": "*"
   }
 }
