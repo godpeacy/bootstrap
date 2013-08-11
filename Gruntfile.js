@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 
     // Task configuration.
     clean: {
-      dist: ['dist']
+      dist: ['public/dist']
     },
 
     jshint: {
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
           'js/tab.js',
           'js/affix.js'
         ],
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'public/dist/js/<%= pkg.name %>.js'
       }
     },
     uglify: {
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         src: ['<%= concat.bootstrap.dest %>'],
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        dest: 'public/dist/js/<%= pkg.name %>.min.js'
       }
     },
 
@@ -74,14 +74,14 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         src: ['less/bootstrap.less'],
-        dest: 'dist/css/<%= pkg.name %>.css'
+        dest: 'public/dist/css/<%= pkg.name %>.css'
       },
       min: {
         options: {
           compress: true
         },
         src: ['less/bootstrap.less'],
-        dest: 'dist/css/<%= pkg.name %>.min.css'
+        dest: 'public/dist/css/<%= pkg.name %>.min.css'
       }
     },
 
