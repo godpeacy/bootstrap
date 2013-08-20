@@ -1,12 +1,36 @@
----
-layout: default
-title: CSS
-slug: css
-lead: "Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system."
-base_url: "../"
----
+<!DOCTYPE html> <html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <% include ./_includes/header %> 
+    <!-- Place anything custom after this. -->
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Skip navigation</a>
 
+    <!-- Docs master nav -->
+    <% include ./_includes/nav-main %> 
 
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content" role="banner">
+      <div class="container">
+        <h1>CSS</h1>
+        <p>Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system.</p>
+      </div>
+    </div>
+
+    <!-- Callout for the old docs link -->
+    <% include ./_includes/old-bs-docs %> 
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="bs-sidebar" role="complementary">
+            <ul class="nav bs-sidenav">
+	        <% include ./_includes/nav-css %> 
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-9" role="main">
   <!-- Global Bootstrap settings
   ================================================== -->
   <div class="bs-docs-section">
@@ -17,25 +41,25 @@ base_url: "../"
 
     <h3 id="overview-doctype">HTML5 doctype required</h3>
     <p>Bootstrap makes use of certain HTML elements and CSS properties that require the use of the HTML5 doctype. Include it at the beginning of all your projects.</p>
-{% highlight html %}
+<code>
 <!DOCTYPE html>
 <html lang="en">
   ...
 </html>
-{% endhighlight %}
+</code>
 
     <h3 id="overview-mobile">Mobile first</h3>
     <p>With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we've rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they're baked right into the core. In fact, <strong>Bootstrap is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
     <p>To ensure proper rendering and touch zooming, <strong>add the viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
-{% highlight html %}
+<code>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% endhighlight %}
+</code>
 
     <h3 id="overview-responsive-images">Responsive images</h3>
     <p>Images in Bootstrap 3 can be made responsive-friendly via the addition of the <code>.img-responsive</code> class. This applies <code>max-width: 100%;</code> and <code>height: auto;</code> to the image so that it scales nicely to the parent element.</p>
-{% highlight html %}
+<code>
 <img src="..." class="img-responsive" alt="Responsive image">
-{% endhighlight %}
+</code>
 
     <h3 id="overview-type-links">Typography and links</h3>
     <p>Bootstrap sets basic global display, typography, and link styles. Specifically, we:</p>
@@ -52,11 +76,11 @@ base_url: "../"
 
     <h3 id="overview-container">Centering with container</h3>
     <p>Easily center a page's contents by wrapping its contents in a <code>.container</code>. Containers set <code>max-width</code> at various media query breakpoints to match our grid system.</p>
-{% highlight html %}
+<code>
 <div class="container">
   ...
 </div>
-{% endhighlight %}
+</code>
   </div>
 
 
@@ -191,7 +215,7 @@ base_url: "../"
         <div class="col-lg-6">6</div>
       </div>
     </div>
-{% highlight html %}
+<code>
 <div class="row">
   <div class="col-lg-1">1</div>
   <div class="col-lg-1">1</div>
@@ -219,7 +243,7 @@ base_url: "../"
   <div class="col-lg-6">6</div>
   <div class="col-lg-6">6</div>
 </div>
-{% endhighlight %}
+</code>
 
     <h3 id="grid-example-mixed">Example: Combining mobile with desktop</h3>
     <p>Don't want your columns to simply stack in smaller devices? Use the small device grid system by adding <code>.col-*</code> classes to the existing <code>.col-lg-*</code> ones. See the example below for a better idea of how it all works.</p>
@@ -238,7 +262,7 @@ base_url: "../"
         <div class="col-6 col-lg-6">6</div>
       </div>
     </div>
-{% highlight html %}
+<code>
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 <div class="row">
   <div class="col-12 col-lg-8">8</div>
@@ -257,7 +281,7 @@ base_url: "../"
   <div class="col-6 col-lg-6">6</div>
   <div class="col-6 col-lg-6">6</div>
 </div>
-{% endhighlight %}
+</code>
 
     <h3 id="grid-example-mixed-complete">Example: Mobile, tablet, and desktop</h3>
     <p>Build on the previous example by creating even more dynamic and powerful layouts with tablet <code>.col-sm-*</code> classes.</p>
@@ -276,7 +300,7 @@ base_url: "../"
         <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-sm-6 .col-lg-6</div>
       </div>
     </div>
-{% highlight html %}
+<code>
 <div class="row">
   <div class="col-12 col-sm-8 col-lg-8">.col-12 .col-sm-8 .col-lg-8</div>
   <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-sm-4 .col-lg-4</div>
@@ -290,7 +314,7 @@ base_url: "../"
   <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-sm-6 .col-lg-6</div>
   <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-sm-6 .col-lg-6</div>
 </div>
-{% endhighlight %}
+</code>
 
     <div class="bs-callout bs-callout-danger">
       <h4>Need more examples?</h4>
@@ -313,7 +337,7 @@ base_url: "../"
         <div class="col-lg-6 col-lg-offset-3">6 offset 3</div>
       </div><!-- /row -->
     </div>
-{% highlight html %}
+<code>
 <div class="row">
   <div class="col-lg-4">...</div>
   <div class="col-lg-4 col-lg-offset-4">...</div>
@@ -325,7 +349,7 @@ base_url: "../"
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3">...</div>
 </div>
-{% endhighlight %}
+</code>
 
 
     <h3 id="grid-nesting">Nesting columns</h3>
@@ -343,7 +367,7 @@ base_url: "../"
         </div>
       </div>
     </div>
-{% highlight html %}
+<code>
 <div class="row">
   <div class="col-lg-9">
     Level 1: 9 columns
@@ -357,7 +381,7 @@ base_url: "../"
     </div>
   </div>
 </div>
-{% endhighlight %}
+</code>
 
     <h3 id="grid-column-ordering">Column ordering</h3>
     <p>Easily change the order of our built-in grid columns with <code>.col-lg-push-*</code> and <code>.col-lg-pull-*</code> modifier classes.</p>
@@ -366,27 +390,27 @@ base_url: "../"
       <div class="col-lg-3 col-lg-pull-9">3</div>
     </div>
 
-{% highlight html %}
+<code>
 <div class="row">
   <div class="col-lg-9 col-lg-push-3">9</div>
   <div class="col-lg-3 col-lg-pull-9">3</div>
 </div>
-{% endhighlight %}
+</code>
 
     <h3 id="grid-less">LESS mixins and variables</h3>
     <p>In addition to <a href="#grid-example-basic">prebuilt grid classes</a> for fast layouts, Bootstrap includes LESS variables and mixins for quickly generating your own simple, semantic layouts.</p>
 
     <h4>Variables</h4>
     <p>Variables determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.</p>
-{% highlight css %}
+<code>
 @grid-columns:              12;
 @grid-gutter-width:         30px;
 @grid-float-breakpoint:     768px;
-{% endhighlight %}
+</code>
 
     <h4>Mixins</h4>
     <p>Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.</p>
-{% highlight css %}
+<code>
 // Creates a wrapper for a series of columns
 .make-row(@gutter: @grid-gutter-width) {
   // Then clear the floated columns
@@ -453,11 +477,11 @@ base_url: "../"
     width: percentage((@columns / @grid-columns));
   }
 }
-{% endhighlight %}
+</code>
 
     <h4>Example usage</h4>
     <p>You can modify the variables to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.</p>
-{% highlight css %}
+<code>
 .wrapper {
   .make-row();
 }
@@ -468,13 +492,13 @@ base_url: "../"
   .make-column(3);
   .make-column-offset(1);
 }
-{% endhighlight %}
-{% highlight html %}
+</code>
+<code>
 <div class="wrapper">
   <div class="content-main">...</div>
   <div class="content-secondary">...</div>
 </div>
-{% endhighlight %}
+</code>
 
   </div>
 
@@ -2126,3 +2150,29 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </ul>
 
   </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-footer" role="contentinfo">
+      {% include social-buttons.html %}
+
+      <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+      <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+      <ul class="footer-links">
+        <li><a href="{{ site.blog }}">Blog</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="{{ site.repo }}/issues?state=open">Issues</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="{{ site.repo }}/releases">Releases</a></li>
+      </ul>
+    </footer>
+
+    <!-- JS and analytics only. -->
+    <% include ./_includes/footer %> 
+
+  </body>
+</html>

@@ -76,6 +76,10 @@ module.exports = function(grunt) {
         src: ['less/bootstrap.less'],
         dest: 'public/dist/css/<%= pkg.name %>.css'
       },
+      less: {
+        src: ['less/*.less'],
+        dest: 'public/dist/css/*.css'
+      },
       min: {
         options: {
           compress: true
@@ -151,4 +155,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist']);
+  // LESS
+  grunt.registerTask('less', ['less']);
 };

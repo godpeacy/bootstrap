@@ -9,16 +9,26 @@
     <a class="sr-only" href="#content">Skip navigation</a>
 
     <!-- Docs master nav -->
-    {% include nav-main.html %}
+    <% include ./_includes/nav-main %> 
 
     <!-- Page content of course! -->
-    {{ content }}
+    <!-- {{ content }} -->
+<div class="bs-masthead" id="content" role="main">
+  <div class="container">
+    <h1>Bootstrap 3</h1>
+    <p class="lead">Sleek, intuitive, and powerful mobile-first front-end framework for faster and easier web development.</p>
+    <p>
+      <a href="{{ site.download }}" class="btn btn-outline btn-lg" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 3.0.0 RC1']);">Download latest BS3</a>
+    </p>
+    <p><strong>Heads up!</strong> Downloads are pulled directly from the latest commited code on GitHub, and as a result our docs may at times be out of sync.</p>
+  </div>
+</div>
 
     <!-- Callout for the old docs link -->
-    {% include old-bs-docs.html %}
+    <% include ./_includes/old-bs-docs %> 
 
     <div class="container" role="contentinfo">
-      {% include social-buttons.html %}
+      <% include ./_includes/social-buttons %> 
 
       <ul class="bs-masthead-links">
         <li>
@@ -37,7 +47,7 @@
     </div>
 
     <!-- JS and analytics only. -->
-    {% include footer.html %}
+    <% include ./_includes/footer %> 
 
   </body>
 </html>
